@@ -1,21 +1,40 @@
-create database flyway;
-use flyway;
+create database flyawayp;
 
-CREATE TABLE  LOGIN  (   
-    USERNAME VARCHAR(40),   
-    PASSWORD VARCHAR(40)); 
- 
- INSERT INTO LOGIN (USERNAME, PASSWORD) value('saurabh', 'admin');
- 
- select * from login;
- 
-create table dbuser(
- `fname` varchar(20) NOT NULL,
-  `lname` varchar(20) NOT NULL,
-  `Uname` varchar(20) NOT NULL,
-   `pwd` varchar(20) NOT NULL,
-   `Add` varchar(60) NOT NULL,
-  PRIMARY KEY (`Uname`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
-select * from dbuser;
+use flyawayp;
+
+create table adminlogin(
+ademail varchar(30) primary key,
+adpwd varchar(25));
+
+select * from adminlogin;
+
+create table flight(
+Airport varchar(200) primary key,
+airline varchar(50) not null,
+sourcee varchar(200) not null,
+destination varchar(200) not null,
+seats int,
+price int);
+
+select * from flight;
+
+delete from flight where Airport='Rajiv Gandhi Airport';
+
+select * from flight where sourcee='Nagpur' and destination='Delhi';
+
+update flight set Airport='?', airline='?', sourcee='?', destination='?', seats=?, price=?
+where Airport='?';
+
+create table passenger(
+pname varchar(200) primary key,
+gender varchar(6),
+location varchar(100),
+phoneno varchar(10),
+datee date,
+noofperson varchar(1),
+email varchar(200),
+passwd varchar(200));
+
+
+select * from passenger;
